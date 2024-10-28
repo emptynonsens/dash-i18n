@@ -1,0 +1,11 @@
+{
+    "i18nLike":{
+        "devtrn_Title":"Witaj świecie",
+        "devtrn_inputBox":"Wpisz coś",
+        "devtrn_chartTitle":"Przetłumaczony tytuł wykresu",
+        "devtrn_A":"Kategoria A",
+        "devtrn_B":"Kategoria B",
+          "devtrn_x":"Oś X",
+        "devtrn_y":"Oś Y"
+      }
+}
