@@ -1,11 +1,14 @@
 {
-    "i18nLike":{
-        "devtrn_Title":"Hello World",
-        "devtrn_inputBox":"Type in..",
-        "devtrn_chartTitle":"Translated chart title",
-        "devtrn_A":"Category A",
-        "devtrn_B":"Category B",
-        "devtrn_x":"X Axis",
-        "devtrn_y":"Y Axis"
-      }
+  "i18nLike": {
+    "devtrn_Title": "Hello World",
+    "devtrn_inputBox": "Type something",
+    "devtrn_chartTitle": "Translated chart title",
+    "devtrn_A": "Category A",
+    "devtrn_B": "Category B",
+    "devtrn_x": "X Axis",
+    "devtrn_y": "Y Axis",
+    "foo": "bar",
+    "foo2": "bar2",
+    "bar": "foo_baar"
+  }
 }

@@ -5,6 +5,7 @@ import plotly.express as px
 
 import os
 from flask import json
+import random
 # import dash_core_components as dcc
 
 # Sample DataFrame
@@ -35,7 +36,7 @@ app.layout = html.Div([
     html.H1("devtrn_Title"),
     
     dcc.Dropdown(options=['eng','pl'], value ='eng', id='dropdown_translateDropdown', persistence=True), # default value from navigator.language
-    html.Div(id='tranlsations-available'),
+    html.Div(id='tranlsations-available', className='ignoreMeClass'),
     dcc.Graph(
         id='scatter-plot',
         figure=fig
@@ -43,6 +44,7 @@ app.layout = html.Div([
     dcc.Input(id='input-box', type='text', value='devtrn_inputBox'),
     html.Button('Submit', id='button'), 
     html.Div(id='output-container-button', children='Enter a value and press submit'),
+    
     html.Br(),
     dash_table.DataTable(
         id='table',
@@ -50,8 +52,8 @@ app.layout = html.Div([
         data=df.to_dict('records'),
     ),
     html.Button('refresh', id='btn_refresh'),
-
 ])
+
 
 @app.callback(
     Output('table', 'data'),
@@ -101,7 +103,7 @@ clientside_callback(
 
 
 clientside_callback(
-    ClientsideFunction(namespace='translations', function_name='observeDOMChanges'),
+    ClientsideFunction(namespace='translations', function_name='initI18Next'),
     Output('tranlsation-target', 'data'),
     Input('tranlsation-store', 'data'),
     # Input(AIO_OffCanvasGlobal.ids.offCanvas(offCanvasId), 'is_open')
@@ -110,11 +112,12 @@ clientside_callback(
 @app.callback(
     Output('output-container-button', 'children'),
     Input('button', 'n_clicks'),
-    State('input-box', 'value')
+    State('input-box', 'value'),
+    prevent_initial_call=True
 )
 def update_output(n_clicks, value):
-    return 'The input value was "{}" and the button has been clicked {} times'.format(value, n_clicks)
-
+    choice = random.choice(['devtrn_inputBoxOutput1', 'devtrn_inputBoxOutput2'])
+    return html.Div(choice, id =choice+str(n_clicks))
 
 
 if __name__ == '__main__':

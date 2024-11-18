@@ -2,10 +2,14 @@
     "i18nLike":{
         "devtrn_Title":"Witaj świecie",
         "devtrn_inputBox":"Wpisz coś",
+        "devtrn_inputBoxOutput1":"Output test 1",
+        "devtrn_inputBoxOutput2":"Output test 2",
         "devtrn_chartTitle":"Przetłumaczony tytuł wykresu",
         "devtrn_A":"Kategoria A",
         "devtrn_B":"Kategoria B",
           "devtrn_x":"Oś X",
-        "devtrn_y":"Oś Y"
+        "devtrn_y":"Oś Y",
+        "devtrn_foo2":"foo-translated"
+
       }
 }
